@@ -1,14 +1,12 @@
 import React, { useContext, useState } from 'react'
 import loginIcons from '../assest/signin.gif'
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 import Context from '../context';
 
 const Login = () => {
-    const [showPassword,setShowPassword] = useState(false)
+    const [showPassword] = useState(false)
     const [data,setData] = useState({
         email : "",
         password : ""
@@ -90,19 +88,7 @@ const Login = () => {
                                     name='password' 
                                     onChange={handleOnChange}
                                     className='w-full h-full outline-none bg-transparent'/>
-                                <div className='cursor-pointer text-xl' onClick={()=>setShowPassword((preve)=>!preve)}>
-                                    <span>
-                                        {
-                                            showPassword ? (
-                                                <FaEyeSlash/>
-                                            )
-                                            :
-                                            (
-                                                <FaEye/>
-                                            )
-                                        }
-                                    </span>
-                                </div>
+                                
                             </div>
                             <Link to={'/forgot-password'} className='block w-fit ml-auto hover:underline hover:text-red-600'>
                                 Forgot password ?

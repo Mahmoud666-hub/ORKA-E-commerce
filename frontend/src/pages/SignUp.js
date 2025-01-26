@@ -1,15 +1,13 @@
 import React, { useState } from 'react'
 import loginIcons from '../assest/signin.gif'
-import { FaEye } from "react-icons/fa";
-import { FaEyeSlash } from "react-icons/fa";
 import { Link, useNavigate } from 'react-router-dom';
 import imageTobase64 from '../helpers/imageTobase64';
 import SummaryApi from '../common';
 import { toast } from 'react-toastify';
 
 const SignUp = () => {
-  const [showPassword,setShowPassword] = useState(false)
-  const [showConfirmPassword,setShowConfirmPassword] = useState(false)
+  const [showPassword] = useState(false)
+  const [showConfirmPassword] = useState(false)
   const [data,setData] = useState({
       email : "",
       password : "",
@@ -134,19 +132,7 @@ const SignUp = () => {
                                     onChange={handleOnChange}
                                     required
                                     className='w-full h-full outline-none bg-transparent'/>
-                                <div className='cursor-pointer text-xl' onClick={()=>setShowPassword((preve)=>!preve)}>
-                                    <span>
-                                        {
-                                            showPassword ? (
-                                                <FaEyeSlash/>
-                                            )
-                                            :
-                                            (
-                                                <FaEye/>
-                                            )
-                                        }
-                                    </span>
-                                </div>
+                                
                             </div>
                         </div>
 
@@ -162,19 +148,7 @@ const SignUp = () => {
                                     required
                                     className='w-full h-full outline-none bg-transparent'/>
 
-                                <div className='cursor-pointer text-xl' onClick={()=>setShowConfirmPassword((preve)=>!preve)}>
-                                    <span>
-                                        {
-                                            showConfirmPassword ? (
-                                                <FaEyeSlash/>
-                                            )
-                                            :
-                                            (
-                                                <FaEye/>
-                                            )
-                                        }
-                                    </span>
-                                </div>
+                               
                             </div>
                         </div>
 
